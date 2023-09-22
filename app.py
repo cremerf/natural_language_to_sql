@@ -7,6 +7,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.callbacks import StreamlitCallbackHandler
 from langchain.agents import create_sql_agent
 from langchain.agents.agent_toolkits import SQLDatabaseToolkit
+from dotenv import load_dotenv
 
 # Streamlit
 import streamlit as st
@@ -22,20 +23,14 @@ import pyarrow
 from packages.paths import DS_LLM_PATHS
 
 PATHS = DS_LLM_PATHS()
+load_dotenv()
 
-with open(PATHS.OPEN_AI) as creds:
-    openai_keys = json.load(creds)
+PROJECT_ID = os.environ.get("PROJECT_ID_GCP")
+DATASET_ID = os.environ.get("DATASET_BQ")
+OPENAI_KEY = os.environ.get("OPENAI_API_KEY")
 
-OPENAI_API_KEY = openai_keys['OPENAI_API_KEY']
 
-with open(PATHS.EXTRACT_KEYS) as creds:
-    bq_keys = json.load(creds)
-
-project_id = bq_keys['project_id_gcp']
-dataset_bq = bq_keys['dataset_bq']
-table_bq = bq_keys['table_bq']
-
-sqlalchemy_url = f'bigquery://{project_id}/{dataset_bq}?credentials_path={PATHS.GCP_KEYS}'
+sqlalchemy_url = f'bigquery://{PROJECT_ID}/{DATASET_ID}?credentials_path={PATHS.GCP_KEYS}'
 
 st.title("🤖 DataGPT 🤖")
 st.title("Chat with your BigQuery database!")

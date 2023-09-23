@@ -2,6 +2,9 @@ langchain==0.0.295
 pyarrow==13.0.0
 fsspec==2023.9.1
 google-api-core==2.11.1
+sqlalchemy==1.4.49
+sqlalchemy==1.4.49
+sqlalchemy-bigquery==1.8.0
 google-auth==2.23.0
 google-cloud-bigquery==3.11.4
 google-cloud-bigquery-storage==2.22.0

@@ -1,4 +1,10 @@
-langchain
-pyarrow
+langchain==0.0.295
+pyarrow==13.0.0
+fsspec==2023.9.1
+google-api-core==2.11.1
+google-auth==2.23.0
+google-cloud-bigquery==3.11.4
+google-cloud-bigquery-storage==2.22.0
+google-cloud-core==2.3.3
 python-dotenv
 streamlit

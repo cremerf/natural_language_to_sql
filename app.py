@@ -32,10 +32,10 @@ OPENAI_KEY = os.environ.get("OPENAI_API_KEY")
 
 sqlalchemy_url = f'bigquery://{PROJECT_ID}/{DATASET_ID}?credentials_path={PATHS.GCP_KEYS}'
 
-st.title("🤖 DataGPT 🤖")
+st.title("🤖 English to SQL - LangChain project")
 st.title("Chat with your BigQuery database!")
-st.subheader("This is DataGPT, your data analytics assistant.", divider='gray')
-st.subheader("Powered by :blue[DataSpeaks.ai] :bar_chart:")
+st.subheader("This is cfGPT, your data analytics assistant.", divider='gray')
+st.subheader("Powered by :blue[cremerf]")
 api_key = st.text_input("OpenAI key", type='password')
 
 

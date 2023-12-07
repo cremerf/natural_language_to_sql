@@ -162,3 +162,5 @@ cython_debug/
 
 credentials/
 .env
+LLM_BQ.ipynb
+LLM_SQL.ipynb
